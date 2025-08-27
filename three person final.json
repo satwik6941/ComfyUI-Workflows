@@ -1,0 +1,2270 @@
+{
+  "id": "935fb45f-88f6-4c8f-baf1-fff0c14327c6",
+  "revision": 0,
+  "last_node_id": 78,
+  "last_link_id": 70,
+  "nodes": [
+    {
+      "id": 30,
+      "type": "CLIPTextEncode",
+      "pos": [
+        2393.492431640625,
+        -372.1730041503906
+      ],
+      "size": [
+        400,
+        88
+      ],
+      "flags": {},
+      "order": 35,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 14
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            16
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 31,
+      "type": "CLIPTextEncode",
+      "pos": [
+        2388.50634765625,
+        87.4818115234375
+      ],
+      "size": [
+        400,
+        88
+      ],
+      "flags": {},
+      "order": 29,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 20
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            26
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 19,
+      "type": "VAEDecode",
+      "pos": [
+        3975.74951171875,
+        -557.367431640625
+      ],
+      "size": [
+        140,
+        46
+      ],
+      "flags": {},
+      "order": 43,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 33
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 8
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            32
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 1,
+      "type": "UNETLoader",
+      "pos": [
+        1264.7823486328125,
+        -608.075439453125
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            2
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "UNETLoader"
+      },
+      "widgets_values": [
+        "flux1-dev.sft",
+        "default"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "VAELoader",
+      "pos": [
+        1268.37744140625,
+        -221.62359619140625
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            6
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "ae.safetensors"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "SetClipHooks",
+      "pos": [
+        1998.33447265625,
+        -600.782470703125
+      ],
+      "size": [
+        270,
+        102
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 11
+        },
+        {
+          "name": "hooks",
+          "shape": 7,
+          "type": "HOOKS",
+          "link": 12
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            13,
+            14
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "SetClipHooks"
+      },
+      "widgets_values": [
+        true,
+        false
+      ]
+    },
+    {
+      "id": 22,
+      "type": "Reroute",
+      "pos": [
+        1696.1390380859375,
+        -992.4594116210938
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "MODEL",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 27,
+      "type": "Reroute",
+      "pos": [
+        1711.08154296875,
+        -945.2040405273438
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 6
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "VAE",
+          "links": [
+            7
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 24,
+      "type": "BlurMaskFast",
+      "pos": [
+        3373.65087890625,
+        -989.186767578125
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 30,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "masks",
+          "type": "MASK",
+          "link": 22
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            54
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-Image-Filters",
+        "ver": "f73e586470e0d65a7372b328d4bccbabfc94c180",
+        "Node name for S&R": "BlurMaskFast"
+      },
+      "widgets_values": [
+        88,
+        1
+      ]
+    },
+    {
+      "id": 8,
+      "type": "SetClipHooks",
+      "pos": [
+        2004.101318359375,
+        -326.0224304199219
+      ],
+      "size": [
+        270,
+        102
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 18
+        },
+        {
+          "name": "hooks",
+          "shape": 7,
+          "type": "HOOKS",
+          "link": 19
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            17,
+            20
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "SetClipHooks"
+      },
+      "widgets_values": [
+        true,
+        false
+      ]
+    },
+    {
+      "id": 2,
+      "type": "DualCLIPLoader",
+      "pos": [
+        1268.3780517578125,
+        -433.1938781738281
+      ],
+      "size": [
+        270,
+        130
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            11,
+            18,
+            46
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "DualCLIPLoader"
+      },
+      "widgets_values": [
+        "clip_l.safetensors",
+        "t5xxl_fp16.safetensors",
+        "flux",
+        "default"
+      ]
+    },
+    {
+      "id": 45,
+      "type": "SetClipHooks",
+      "pos": [
+        1992.6158447265625,
+        -145.7647705078125
+      ],
+      "size": [
+        270,
+        102
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 46
+        },
+        {
+          "name": "hooks",
+          "shape": 7,
+          "type": "HOOKS",
+          "link": 45
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            47,
+            48
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "SetClipHooks"
+      },
+      "widgets_values": [
+        true,
+        false
+      ]
+    },
+    {
+      "id": 37,
+      "type": "CLIPTextEncode",
+      "pos": [
+        1929.6112060546875,
+        256.3271789550781
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 48
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            41
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 10,
+      "type": "CLIPTextEncode",
+      "pos": [
+        2395.312744140625,
+        -186.47840881347656
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 17
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            25
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "roc Asif man is standing center with red coat professional shoot\n\n\nThree Persons standing in a office in a professional pose, dslr camera image with sharpness"
+      ]
+    },
+    {
+      "id": 11,
+      "type": "PairConditioningSetProperties",
+      "pos": [
+        2896.285400390625,
+        -585.1256103515625
+      ],
+      "size": [
+        270,
+        162
+      ],
+      "flags": {},
+      "order": 38,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "positive_NEW",
+          "type": "CONDITIONING",
+          "link": 15
+        },
+        {
+          "name": "negative_NEW",
+          "type": "CONDITIONING",
+          "link": 16
+        },
+        {
+          "name": "mask",
+          "shape": 7,
+          "type": "MASK",
+          "link": 66
+        },
+        {
+          "name": "hooks",
+          "shape": 7,
+          "type": "HOOKS",
+          "link": null
+        },
+        {
+          "name": "timesteps",
+          "shape": 7,
+          "type": "TIMESTEPS_RANGE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            23
+          ]
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [
+            24
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "PairConditioningSetProperties"
+      },
+      "widgets_values": [
+        1,
+        "default"
+      ]
+    },
+    {
+      "id": 44,
+      "type": "CreateHookLora",
+      "pos": [
+        1626.687744140625,
+        -134.72891235351562
+      ],
+      "size": [
+        270,
+        106
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prev_hooks",
+          "shape": 7,
+          "type": "HOOKS",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "HOOKS",
+          "type": "HOOKS",
+          "links": [
+            45
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "CreateHookLora"
+      },
+      "widgets_values": [
+        "kaushal-flux-lora.safetensors",
+        0.9300000000000002,
+        0.9000000000000001
+      ]
+    },
+    {
+      "id": 7,
+      "type": "CreateHookLora",
+      "pos": [
+        1636.74951171875,
+        -323.367431640625
+      ],
+      "size": [
+        270,
+        106
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prev_hooks",
+          "shape": 7,
+          "type": "HOOKS",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "HOOKS",
+          "type": "HOOKS",
+          "links": [
+            19
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "CreateHookLora"
+      },
+      "widgets_values": [
+        "asif-lora-flux_000001500.safetensors 2.safetensors 2.safetensors",
+        0.9300000000000002,
+        0.9000000000000001
+      ]
+    },
+    {
+      "id": 40,
+      "type": "PairConditioningSetPropertiesAndCombine",
+      "pos": [
+        2903.479736328125,
+        -264.5035095214844
+      ],
+      "size": [
+        287.4371032714844,
+        202
+      ],
+      "flags": {},
+      "order": 40,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 36
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 37
+        },
+        {
+          "name": "positive_NEW",
+          "type": "CONDITIONING",
+          "link": 40
+        },
+        {
+          "name": "negative_NEW",
+          "type": "CONDITIONING",
+          "link": 41
+        },
+        {
+          "name": "mask",
+          "shape": 7,
+          "type": "MASK",
+          "link": 68
+        },
+        {
+          "name": "hooks",
+          "shape": 7,
+          "type": "HOOKS",
+          "link": null
+        },
+        {
+          "name": "timesteps",
+          "shape": 7,
+          "type": "TIMESTEPS_RANGE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            38
+          ]
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [
+            39
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "PairConditioningSetPropertiesAndCombine"
+      },
+      "widgets_values": [
+        1,
+        "default"
+      ]
+    },
+    {
+      "id": 38,
+      "type": "CLIPTextEncode",
+      "pos": [
+        1912.499755859375,
+        2.9181482791900635
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 47
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            40
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "zwx man is standing in right side with blue coat professional shoot\n\n\n\nThree Persons standing in a office in a professional pose, dslr camera image with sharpness"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "EmptyLatentImage",
+      "pos": [
+        2940.813720703125,
+        196.1064453125
+      ],
+      "size": [
+        270,
+        106
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            9
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        1
+      ]
+    },
+    {
+      "id": 29,
+      "type": "Reroute",
+      "pos": [
+        3352.452392578125,
+        8.623631477355957
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 9
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "LATENT",
+          "links": [
+            10
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 23,
+      "type": "CreateGradientMask",
+      "pos": [
+        3370.16748046875,
+        -1321.792236328125
+      ],
+      "size": [
+        270,
+        130
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            21
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "1.1.3",
+        "Node name for S&R": "CreateGradientMask"
+      },
+      "widgets_values": [
+        false,
+        1,
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": 13,
+      "type": "ThresholdMask",
+      "pos": [
+        3368.1953125,
+        -1122.0633544921875
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 21
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            22
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "ThresholdMask"
+      },
+      "widgets_values": [
+        0.33000000000000007
+      ]
+    },
+    {
+      "id": 46,
+      "type": "MaskPreview+",
+      "pos": [
+        3770.723876953125,
+        -1205.24365234375
+      ],
+      "size": [
+        148.92050170898438,
+        246
+      ],
+      "flags": {},
+      "order": 37,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 54
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfyui_essentials",
+        "ver": "1.1.0",
+        "Node name for S&R": "MaskPreview+"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 57,
+      "type": "ImageToMask",
+      "pos": [
+        2349.497314453125,
+        -873.1688842773438
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 59
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            60
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "ImageToMask"
+      },
+      "widgets_values": [
+        "alpha"
+      ]
+    },
+    {
+      "id": 60,
+      "type": "ImageToMask",
+      "pos": [
+        2709.926513671875,
+        -854.1515502929688
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 62
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            63
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "ImageToMask"
+      },
+      "widgets_values": [
+        "alpha"
+      ]
+    },
+    {
+      "id": 56,
+      "type": "ThresholdMask",
+      "pos": [
+        1918.51611328125,
+        -751.3565673828125
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 31,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 57
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "ThresholdMask"
+      },
+      "widgets_values": [
+        0.9900000000000002
+      ]
+    },
+    {
+      "id": 62,
+      "type": "ThresholdMask",
+      "pos": [
+        2352.3525390625,
+        -761.7717895507812
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 32,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 60
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "ThresholdMask"
+      },
+      "widgets_values": [
+        0.9900000000000002
+      ]
+    },
+    {
+      "id": 63,
+      "type": "ThresholdMask",
+      "pos": [
+        2705.017578125,
+        -737.244873046875
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 33,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 63
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "ThresholdMask"
+      },
+      "widgets_values": [
+        0.9900000000000002
+      ]
+    },
+    {
+      "id": 28,
+      "type": "Reroute",
+      "pos": [
+        3810.63720703125,
+        -809.5556640625
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "VAE",
+          "links": [
+            8
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 9,
+      "type": "CLIPTextEncode",
+      "pos": [
+        2408.8828125,
+        -620.6991577148438
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 34,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 13
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            15
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "gjnx man is standing left side with blue coat professional shoot\n\n\nThree Persons standing in a office in a professional pose, dslr camera image with sharpness"
+      ]
+    },
+    {
+      "id": 33,
+      "type": "FluxGuidance",
+      "pos": [
+        3284.5556640625,
+        -298.7694091796875
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 41,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 38
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            35
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "FluxGuidance"
+      },
+      "widgets_values": [
+        3.5
+      ]
+    },
+    {
+      "id": 49,
+      "type": "LoadImage",
+      "pos": [
+        1922.689453125,
+        -1297.565185546875
+      ],
+      "size": [
+        274.080078125,
+        314
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            56
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            55,
+            66
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "clipspace/clipspace-mask-272676.60000002384.png [input]",
+        "image"
+      ]
+    },
+    {
+      "id": 50,
+      "type": "LoadImage",
+      "pos": [
+        2272.338623046875,
+        -1285.9853515625
+      ],
+      "size": [
+        274.080078125,
+        314
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            59
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            67
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "clipspace/clipspace-mask-312425.8000000119.png [input]",
+        "image"
+      ]
+    },
+    {
+      "id": 51,
+      "type": "LoadImage",
+      "pos": [
+        2594.67626953125,
+        -1282.970947265625
+      ],
+      "size": [
+        274.080078125,
+        314
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            62
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            68
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "clipspace/clipspace-mask-343523.5.png [input]",
+        "image"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "KSampler",
+      "pos": [
+        3636.229736328125,
+        -589.4075317382812
+      ],
+      "size": [
+        270,
+        474
+      ],
+      "flags": {},
+      "order": 42,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 5
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 35
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 39
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 10
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            33
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        650661831132849,
+        "randomize",
+        20,
+        1,
+        "deis",
+        "beta",
+        1
+      ]
+    },
+    {
+      "id": 26,
+      "type": "Reroute",
+      "pos": [
+        3674.761474609375,
+        -847.845947265625
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 4
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "MODEL",
+          "links": [
+            5
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 53,
+      "type": "MaskPreview+",
+      "pos": [
+        2339.241455078125,
+        -1583.91845703125
+      ],
+      "size": [
+        148.92050170898438,
+        246
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 55
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfyui_essentials",
+        "ver": "1.1.0",
+        "Node name for S&R": "MaskPreview+"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 20,
+      "type": "PreviewImage",
+      "pos": [
+        4177.74951171875,
+        -561.3074340820312
+      ],
+      "size": [
+        464.9629211425781,
+        457.492919921875
+      ],
+      "flags": {},
+      "order": 44,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 32
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 5,
+      "type": "CreateHookLora",
+      "pos": [
+        1641.74951171875,
+        -603.367431640625
+      ],
+      "size": [
+        270,
+        106
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prev_hooks",
+          "shape": 7,
+          "type": "HOOKS",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "HOOKS",
+          "type": "HOOKS",
+          "links": [
+            12
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "CreateHookLora"
+      },
+      "widgets_values": [
+        "gauravjuneja4.safetensors",
+        0.9300000000000002,
+        0.9000000000000001
+      ]
+    },
+    {
+      "id": 55,
+      "type": "ImageToMask",
+      "pos": [
+        1908.364990234375,
+        -867.2649536132812
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 56
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            57
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "ImageToMask"
+      },
+      "widgets_values": [
+        "alpha"
+      ]
+    },
+    {
+      "id": 76,
+      "type": "ImageColorToMask",
+      "pos": [
+        1284.507568359375,
+        -849.9483032226562
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 69
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            70
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "ImageColorToMask"
+      },
+      "widgets_values": [
+        255
+      ]
+    },
+    {
+      "id": 78,
+      "type": "MaskPreview+",
+      "pos": [
+        1603.647705078125,
+        -1068.01220703125
+      ],
+      "size": [
+        148.92050170898438,
+        26
+      ],
+      "flags": {},
+      "order": 36,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 70
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfyui_essentials",
+        "ver": "1.1.0",
+        "Node name for S&R": "MaskPreview+"
+      }
+    },
+    {
+      "id": 69,
+      "type": "LoadImage",
+      "pos": [
+        1268.3785400390625,
+        -1247.2293701171875
+      ],
+      "size": [
+        274.080078125,
+        314
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            69
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "mask_left_soft_1024.png",
+        "image"
+      ]
+    },
+    {
+      "id": 32,
+      "type": "PairConditioningSetPropertiesAndCombine",
+      "pos": [
+        3209.53955078125,
+        -620.8084106445312
+      ],
+      "size": [
+        287.4371032714844,
+        202
+      ],
+      "flags": {},
+      "order": 39,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 23
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 24
+        },
+        {
+          "name": "positive_NEW",
+          "type": "CONDITIONING",
+          "link": 25
+        },
+        {
+          "name": "negative_NEW",
+          "type": "CONDITIONING",
+          "link": 26
+        },
+        {
+          "name": "mask",
+          "shape": 7,
+          "type": "MASK",
+          "link": 67
+        },
+        {
+          "name": "hooks",
+          "shape": 7,
+          "type": "HOOKS",
+          "link": null
+        },
+        {
+          "name": "timesteps",
+          "shape": 7,
+          "type": "TIMESTEPS_RANGE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            36
+          ]
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [
+            37
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.49",
+        "Node name for S&R": "PairConditioningSetPropertiesAndCombine"
+      },
+      "widgets_values": [
+        1,
+        "default"
+      ]
+    }
+  ],
+  "links": [
+    [
+      2,
+      1,
+      0,
+      22,
+      0,
+      "*"
+    ],
+    [
+      4,
+      22,
+      0,
+      26,
+      0,
+      "*"
+    ],
+    [
+      5,
+      26,
+      0,
+      18,
+      0,
+      "MODEL"
+    ],
+    [
+      6,
+      3,
+      0,
+      27,
+      0,
+      "*"
+    ],
+    [
+      7,
+      27,
+      0,
+      28,
+      0,
+      "*"
+    ],
+    [
+      8,
+      28,
+      0,
+      19,
+      1,
+      "VAE"
+    ],
+    [
+      9,
+      4,
+      0,
+      29,
+      0,
+      "*"
+    ],
+    [
+      10,
+      29,
+      0,
+      18,
+      3,
+      "LATENT"
+    ],
+    [
+      11,
+      2,
+      0,
+      6,
+      0,
+      "CLIP"
+    ],
+    [
+      12,
+      5,
+      0,
+      6,
+      1,
+      "HOOKS"
+    ],
+    [
+      13,
+      6,
+      0,
+      9,
+      0,
+      "CLIP"
+    ],
+    [
+      14,
+      6,
+      0,
+      30,
+      0,
+      "CLIP"
+    ],
+    [
+      15,
+      9,
+      0,
+      11,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      16,
+      30,
+      0,
+      11,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      17,
+      8,
+      0,
+      10,
+      0,
+      "CLIP"
+    ],
+    [
+      18,
+      2,
+      0,
+      8,
+      0,
+      "CLIP"
+    ],
+    [
+      19,
+      7,
+      0,
+      8,
+      1,
+      "HOOKS"
+    ],
+    [
+      20,
+      8,
+      0,
+      31,
+      0,
+      "CLIP"
+    ],
+    [
+      21,
+      23,
+      0,
+      13,
+      0,
+      "MASK"
+    ],
+    [
+      22,
+      13,
+      0,
+      24,
+      0,
+      "MASK"
+    ],
+    [
+      23,
+      11,
+      0,
+      32,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      24,
+      11,
+      1,
+      32,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      25,
+      10,
+      0,
+      32,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      26,
+      31,
+      0,
+      32,
+      3,
+      "CONDITIONING"
+    ],
+    [
+      32,
+      19,
+      0,
+      20,
+      0,
+      "IMAGE"
+    ],
+    [
+      33,
+      18,
+      0,
+      19,
+      0,
+      "LATENT"
+    ],
+    [
+      35,
+      33,
+      0,
+      18,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      36,
+      32,
+      0,
+      40,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      37,
+      32,
+      1,
+      40,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      38,
+      40,
+      0,
+      33,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      39,
+      40,
+      1,
+      18,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      40,
+      38,
+      0,
+      40,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      41,
+      37,
+      0,
+      40,
+      3,
+      "CONDITIONING"
+    ],
+    [
+      45,
+      44,
+      0,
+      45,
+      1,
+      "HOOKS"
+    ],
+    [
+      46,
+      2,
+      0,
+      45,
+      0,
+      "CLIP"
+    ],
+    [
+      47,
+      45,
+      0,
+      38,
+      0,
+      "CLIP"
+    ],
+    [
+      48,
+      45,
+      0,
+      37,
+      0,
+      "CLIP"
+    ],
+    [
+      54,
+      24,
+      0,
+      46,
+      0,
+      "MASK"
+    ],
+    [
+      55,
+      49,
+      1,
+      53,
+      0,
+      "MASK"
+    ],
+    [
+      56,
+      49,
+      0,
+      55,
+      0,
+      "IMAGE"
+    ],
+    [
+      57,
+      55,
+      0,
+      56,
+      0,
+      "MASK"
+    ],
+    [
+      59,
+      50,
+      0,
+      57,
+      0,
+      "IMAGE"
+    ],
+    [
+      60,
+      57,
+      0,
+      62,
+      0,
+      "MASK"
+    ],
+    [
+      62,
+      51,
+      0,
+      60,
+      0,
+      "IMAGE"
+    ],
+    [
+      63,
+      60,
+      0,
+      63,
+      0,
+      "MASK"
+    ],
+    [
+      66,
+      49,
+      1,
+      11,
+      2,
+      "MASK"
+    ],
+    [
+      67,
+      50,
+      1,
+      32,
+      4,
+      "MASK"
+    ],
+    [
+      68,
+      51,
+      1,
+      40,
+      4,
+      "MASK"
+    ],
+    [
+      69,
+      69,
+      0,
+      76,
+      0,
+      "IMAGE"
+    ],
+    [
+      70,
+      76,
+      0,
+      78,
+      0,
+      "MASK"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.7627768444385475,
+      "offset": [
+        -2604.2739299889467,
+        858.9062675996208
+      ]
+    },
+    "frontendVersion": "1.23.4"
+  },
+  "version": 0.4
+}
